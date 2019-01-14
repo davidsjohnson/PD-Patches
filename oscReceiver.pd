@@ -1,0 +1,10 @@
+#N canvas 264 86 655 446 10;
+#X obj 18 27 cnv 15 150 120 empty empty OSC_Config 20 12 0 14 -187900
+-66577 0;
+#X obj 33 61 udpreceive 10101;
+#X obj 33 82 unpackOSC;
+#X obj 33 103 routeOSC /space/1;
+#X obj 33 154 print space;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;

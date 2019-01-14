@@ -1,0 +1,28 @@
+#N canvas 958 60 450 300 10;
+#X msg 17 22 connect localhost 10101;
+#X obj 17 186 udpsend;
+#X msg 37 48 disconnect;
+#X obj 89 116 packOSC;
+#X obj 139 55 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 86 85 send /bang;
+#X obj 176 50 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 404 70 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6100 1;
+#X msg 170 68 send /button/1 \$1;
+#X obj 345 140 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 7200 1;
+#X msg 216 226 send /slider/2 \$1;
+#X msg 293 91 send /slider/1 \$1;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 11 0;
+#X connect 8 0 3 0;
+#X connect 9 0 10 0;
+#X connect 10 0 3 0;
+#X connect 11 0 3 0;
